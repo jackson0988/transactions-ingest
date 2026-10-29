@@ -1,0 +1,47 @@
+[
+  {
+    "sourceSystem": "Store Uptown",
+    "transactionId": 100001,
+    "cardNumber": "***1111",
+    "locationCode": "UPTOWN",
+    "productName": "Wireless Mouse",
+    "amount": 24.99,
+    "transactionTime": "2026-02-27T08:15:30Z"
+  },
+  {
+    "sourceSystem": "Store Uptown",
+    "transactionId": 100002,
+    "cardNumber": "***2231",
+    "locationCode": "UPTOWN",
+    "productName": "HDMI Cable 2m",
+    "amount": 12.5,
+    "hoursAgo": 2
+  },
+  {
+    "sourceSystem": "Store Uptown",
+    "transactionId": 100003,
+    "cardNumber": "",
+    "locationCode": "UPTOWN",
+    "productName": "AA Batteries 8pk",
+    "amount": 7.99,
+    "hoursAgo": 5.5
+  },
+  {
+    "sourceSystem": "Store Uptown",
+    "transactionId": 100004,
+    "cardNumber": "***9012",
+    "locationCode": "UPTOWN-KIOSK",
+    "productName": "Laptop Stand",
+    "amount": 45.0,
+    "hoursAgo": 11
+  },
+  {
+    "sourceSystem": "Store Uptown",
+    "transactionId": 100005,
+    "cardNumber": "***1111",
+    "locationCode": "UPTOWN",
+    "productName": "Webcam 1080p",
+    "amount": 59.99,
+    "hoursAgo": 20
+  }
+]

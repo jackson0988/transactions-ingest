@@ -1,0 +1,26 @@
+<div class="tw:flex tw:flex-wrap tw:items-center tw:justify-between tw:gap-3">
+  <div class="tw:flex tw:items-center tw:gap-2 small text-body-secondary">
+    <span>Showing {{ rangeStart() }}-{{ rangeEnd() }} of {{ totalCount() }}</span>
+    <select class="form-select form-select-sm tw:w-auto" [value]="pageSize()" (change)="onPageSize($any($event.target).value)" aria-label="Page size">
+      @for (size of pageSizeOptions(); track size) {
+        <option [value]="size">{{ size }} / page</option>
+      }
+    </select>
+  </div>
+
+  <nav aria-label="Pages">
+    <ul class="pagination pagination-sm mb-0">
+      <li class="page-item" [class.disabled]="page() === 1">
+        <button type="button" class="page-link" (click)="goTo(page() - 1)" aria-label="Previous">&laquo;</button>
+      </li>
+      @for (p of pageWindow(); track p) {
+        <li class="page-item" [class.active]="p === page()">
+          <button type="button" class="page-link" (click)="goTo(p)">{{ p }}</button>
+        </li>
+      }
+      <li class="page-item" [class.disabled]="page() === totalPages()">
+        <button type="button" class="page-link" (click)="goTo(page() + 1)" aria-label="Next">&raquo;</button>
+      </li>
+    </ul>
+  </nav>
+</div>

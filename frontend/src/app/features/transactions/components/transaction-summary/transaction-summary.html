@@ -1,0 +1,37 @@
+@let tx = transaction();
+
+<div class="card shadow-sm h-100">
+  <div class="card-header bg-body tw:flex tw:items-center tw:justify-between">
+    <h2 class="h5 mb-0">
+      {{ tx.sourceSystem }} <span class="text-body-secondary font-monospace">#{{ tx.transactionId }}</span>
+    </h2>
+    <app-transaction-status-badge [status]="tx.status" />
+  </div>
+  <div class="card-body">
+    <dl class="row mb-0 small">
+      <dt class="col-5 text-body-secondary fw-normal">Product</dt>
+      <dd class="col-7">{{ tx.productName }}</dd>
+
+      <dt class="col-5 text-body-secondary fw-normal">Amount</dt>
+      <dd class="col-7 fw-semibold">{{ tx.amount | currency: 'USD' }}</dd>
+
+      <dt class="col-5 text-body-secondary fw-normal">Location</dt>
+      <dd class="col-7">{{ tx.locationCode }}</dd>
+
+      <dt class="col-5 text-body-secondary fw-normal">Card</dt>
+      <dd class="col-7 font-monospace">{{ tx.cardNumber || 'n/a (non-card payment)' }}</dd>
+
+      <dt class="col-5 text-body-secondary fw-normal">Transaction time</dt>
+      <dd class="col-7">{{ tx.transactionTime | date: 'yyyy-MM-dd HH:mm:ss' : 'UTC' }} UTC</dd>
+
+      <dt class="col-5 text-body-secondary fw-normal">Revision</dt>
+      <dd class="col-7">{{ tx.revisionNumber }}</dd>
+
+      <dt class="col-5 text-body-secondary fw-normal">First imported</dt>
+      <dd class="col-7">{{ tx.createdAtUtc | date: 'yyyy-MM-dd HH:mm' : 'UTC' }}</dd>
+
+      <dt class="col-5 text-body-secondary fw-normal">Last updated</dt>
+      <dd class="col-7 mb-0">{{ tx.updatedAtUtc ? (tx.updatedAtUtc | date: 'yyyy-MM-dd HH:mm' : 'UTC') : '-' }}</dd>
+    </dl>
+  </div>
+</div>

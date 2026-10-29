@@ -1,0 +1,28 @@
+/*
+  Bootstrap is loaded from angular.json. Tailwind preflight is skipped on purpose
+  (it wipes bootstrap's reboot), we only take theme + utilities with a tw: prefix.
+*/
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+
+html,
+body {
+  height: 100%;
+}
+
+.table-txn th.sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.table-txn tr.row-revoked td {
+  color: var(--bs-secondary-color);
+  text-decoration: line-through;
+}
+
+/* status column should never be struck through, it's the reason why */
+.table-txn tr.row-revoked td.col-status {
+  text-decoration: none;
+}

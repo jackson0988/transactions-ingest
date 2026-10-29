@@ -1,0 +1,47 @@
+[
+  {
+    "sourceSystem": "Online",
+    "transactionId": 100001,
+    "cardNumber": "***4444",
+    "locationCode": "ONLINE",
+    "productName": "USB-C Dock Station",
+    "amount": 129.95,
+    "transactionTime": "2026-02-27T11:20:05Z"
+  },
+  {
+    "sourceSystem": "Online",
+    "transactionId": 300100,
+    "cardNumber": "***6001",
+    "locationCode": "WEB-US",
+    "productName": "Gaming Headset",
+    "amount": 79.99,
+    "hoursAgo": 0.5
+  },
+  {
+    "sourceSystem": "Online",
+    "transactionId": 300101,
+    "cardNumber": "",
+    "locationCode": "PARTNER-AMZ",
+    "productName": "Gift Card",
+    "amount": 50.0,
+    "hoursAgo": 4
+  },
+  {
+    "sourceSystem": "Online",
+    "transactionId": 300102,
+    "cardNumber": "***3390",
+    "locationCode": "WEB-EU",
+    "productName": "External SSD 1TB",
+    "amount": 109.0,
+    "hoursAgo": 9
+  },
+  {
+    "sourceSystem": "Online",
+    "transactionId": 300103,
+    "cardNumber": "***6001",
+    "locationCode": "WEB-US",
+    "productName": "Noise Cancelling Headphones",
+    "amount": 199.0,
+    "hoursAgo": 6
+  }
+]

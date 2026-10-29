@@ -1,0 +1,47 @@
+<div class="table-responsive tw:relative">
+  @if (loading()) {
+    <div class="progress tw:absolute tw:top-0 tw:left-0 tw:w-full tw:rounded-none" style="height: 3px">
+      <div class="progress-bar progress-bar-striped progress-bar-animated w-100"></div>
+    </div>
+  }
+
+  <table class="table table-hover table-txn align-middle mb-0">
+    <thead class="table-light">
+      <tr>
+        @for (col of columns; track col.field) {
+          <th scope="col" class="sortable" [class]="col.css ?? ''" (click)="sortChange.emit(col.field)">
+            {{ col.label }} <i class="bi small" [class]="sortIcon(col.field)"></i>
+          </th>
+        }
+        <th scope="col"><span class="visually-hidden">Actions</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (tx of items(); track tx.id) {
+        <tr [class.row-revoked]="tx.status === 'Revoked'">
+          <td>{{ tx.sourceSystem }}</td>
+          <td class="font-monospace">{{ tx.transactionId }}</td>
+          <td>{{ tx.locationCode }}</td>
+          <td class="tw:max-w-56 text-truncate" [title]="tx.productName">{{ tx.productName }}</td>
+          <td class="text-end">{{ tx.amount | currency: 'USD' }}</td>
+          <td class="tw:whitespace-nowrap">{{ tx.transactionTime | date: 'yyyy-MM-dd HH:mm:ss' : 'UTC' }}</td>
+          <td class="col-status"><app-transaction-status-badge [status]="tx.status" /></td>
+          <td class="text-end">
+            <a class="btn btn-sm btn-outline-primary" [routerLink]="['/transactions', tx.id]">Details</a>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td [attr.colspan]="columns.length + 1" class="text-center text-body-secondary tw:py-10">
+            @if (loadFailed()) {
+              Could not load transactions.
+              <button type="button" class="btn btn-link p-0 align-baseline" (click)="retry.emit()">Try again</button>
+            } @else if (!loading()) {
+              No transactions found. Run an import or change the filters.
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

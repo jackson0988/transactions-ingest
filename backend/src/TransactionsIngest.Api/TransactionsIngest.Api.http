@@ -1,0 +1,19 @@
+@host = https://localhost:7180
+
+### run an import
+POST {{host}}/api/import
+
+### list (first page, newest first)
+GET {{host}}/api/transactions?page=1&pageSize=25&sortBy=transactionTime&sortDir=desc
+
+### filter
+GET {{host}}/api/transactions?sourceSystem=Online&status=Active
+
+### single + audit
+GET {{host}}/api/transactions/1
+
+###
+GET {{host}}/api/transactions/1/audit
+
+### last import runs
+GET {{host}}/api/import/batches?take=10

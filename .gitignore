@@ -1,0 +1,24 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+TestResults/
+*.db
+*.db-shm
+*.db-wal
+backend/src/TransactionsIngest.Api/wwwroot/
+
+# Angular / node
+node_modules/
+dist/
+out-tsc/
+.angular/
+npm-debug.log*
+
+# editors / os
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db

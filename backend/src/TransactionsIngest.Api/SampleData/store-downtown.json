@@ -1,0 +1,47 @@
+[
+  {
+    "sourceSystem": "Store Downtown",
+    "transactionId": 100001,
+    "cardNumber": "***0002",
+    "locationCode": "DOWNTOWN",
+    "productName": "Mechanical Keyboard",
+    "amount": 89.99,
+    "transactionTime": "2026-02-27T09:45:12Z"
+  },
+  {
+    "sourceSystem": "Store Downtown",
+    "transactionId": 200010,
+    "cardNumber": "***4521",
+    "locationCode": "DOWNTOWN",
+    "productName": "Monitor 27in",
+    "amount": 249.0,
+    "hoursAgo": 1
+  },
+  {
+    "sourceSystem": "Store Downtown",
+    "transactionId": 200011,
+    "cardNumber": "***7788",
+    "locationCode": "DOWNTOWN",
+    "productName": "USB Hub 4-port",
+    "amount": 19.95,
+    "hoursAgo": 3.25
+  },
+  {
+    "sourceSystem": "Store Downtown",
+    "transactionId": 200012,
+    "cardNumber": "",
+    "locationCode": "DOWNTOWN-POP",
+    "productName": "Phone Case",
+    "amount": 14.0,
+    "hoursAgo": 8
+  },
+  {
+    "sourceSystem": "Store Downtown",
+    "transactionId": 200013,
+    "cardNumber": "***0002",
+    "locationCode": "DOWNTOWN",
+    "productName": "Desk Lamp",
+    "amount": 32.49,
+    "hoursAgo": 30
+  }
+]

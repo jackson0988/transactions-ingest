@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/TransactionsIngest.Domain/TransactionsIngest.Domain.csproj" />
+    <Project Path="src/TransactionsIngest.Application/TransactionsIngest.Application.csproj" />
+    <Project Path="src/TransactionsIngest.Infrastructure/TransactionsIngest.Infrastructure.csproj" />
+    <Project Path="src/TransactionsIngest.Api/TransactionsIngest.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TransactionsIngest.UnitTests/TransactionsIngest.UnitTests.csproj" />
+    <Project Path="tests/TransactionsIngest.IntegrationTests/TransactionsIngest.IntegrationTests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,43 @@
+<div class="tw:flex tw:flex-wrap tw:items-center tw:justify-between tw:gap-3 tw:mb-4">
+  <div>
+    <h1 class="h3 mb-0">Transactions</h1>
+    <small class="text-body-secondary">Imported from Store Uptown, Store Downtown and Online</small>
+  </div>
+
+  <div class="tw:flex tw:gap-2">
+    <button type="button" class="btn btn-outline-secondary" (click)="refresh()" [disabled]="loading()">
+      <i class="bi bi-arrow-clockwise"></i> Refresh
+    </button>
+    <button type="button" class="btn btn-primary" (click)="runImport()" [disabled]="importApi.running()">
+      @if (importApi.running()) {
+        <span class="spinner-border spinner-border-sm me-1" aria-hidden="true"></span> Importing...
+      } @else {
+        <i class="bi bi-cloud-download"></i> Run import
+      }
+    </button>
+  </div>
+</div>
+
+<app-transaction-filters class="d-block tw:mb-4" [value]="filter()" (valueChange)="onFilterChange($event)" />
+
+<div class="card shadow-sm">
+  <app-transaction-table
+    [items]="items()"
+    [loading]="loading()"
+    [loadFailed]="loadFailed()"
+    [sortBy]="sortBy()"
+    [sortDir]="sortDir()"
+    (sortChange)="onSort($event)"
+    (retry)="refresh()"
+  />
+
+  <div class="card-footer bg-body">
+    <app-pagination
+      [page]="page()"
+      [pageSize]="pageSize()"
+      [totalCount]="totalCount()"
+      (pageChange)="page.set($event)"
+      (pageSizeChange)="onPageSizeChange($event)"
+    />
+  </div>
+</div>
